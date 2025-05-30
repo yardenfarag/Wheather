@@ -1,0 +1,199 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+}
+
+/* Weather-specific backgrounds */
+.sunny {
+  background: linear-gradient(to bottom, #1e90ff, #87ceeb);
+}
+
+.night {
+  background: linear-gradient(to bottom, #0f2027, #203a43);
+}
+
+.cloudy {
+  background: linear-gradient(to bottom, #bdc3c7, #2c3e50);
+}
+
+.rainy {
+  background: linear-gradient(to bottom, #2c3e50, #4ca1af);
+}
+
+.snowy {
+  background: linear-gradient(to bottom, #e6e9f0, #eef2f3);
+}
+
+.stormy {
+  background: linear-gradient(to bottom, #2c3e50, #000000);
+}
+
+.foggy {
+  background: linear-gradient(to bottom, #bdc3c7, #2c3e50);
+}
+
+.windy {
+  background: linear-gradient(to bottom, #bdc3c7, #2c3e50);
+}
+
+.default {
+  background: linear-gradient(to bottom, #1e90ff, #87ceeb);
+}
+
+/* Rain animation */
+.rain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.raindrop {
+  position: absolute;
+  width: 3px;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.9));
+  animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Snow animation */
+.snow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.9;
+  animation: snow 5s linear infinite;
+}
+
+@keyframes snow {
+  from {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Lightning animation */
+.lightning {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: lightning 4s linear infinite;
+}
+
+@keyframes lightning {
+  0% {
+    background: transparent;
+  }
+  2% {
+    background: rgba(255, 255, 255, 0.6);
+  }
+  4% {
+    background: transparent;
+  }
+  6% {
+    background: rgba(255, 255, 255, 0.6);
+  }
+  8% {
+    background: transparent;
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+/* Wind animation */
+.wind {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.windLine {
+  position: absolute;
+  width: 200px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  animation: wind 3s linear infinite;
+}
+
+@keyframes wind {
+  from {
+    transform: translateX(-200px) translateY(0);
+  }
+  to {
+    transform: translateX(100vw) translateY(100px);
+  }
+}
+
+/* Position raindrops */
+.raindrop:nth-child(1) { left: 10%; animation-duration: 0.8s; animation-delay: 0s; }
+.raindrop:nth-child(2) { left: 20%; animation-duration: 1s; animation-delay: 0.2s; }
+.raindrop:nth-child(3) { left: 30%; animation-duration: 0.9s; animation-delay: 0.1s; }
+.raindrop:nth-child(4) { left: 40%; animation-duration: 1.1s; animation-delay: 0.3s; }
+.raindrop:nth-child(5) { left: 50%; animation-duration: 0.7s; animation-delay: 0.2s; }
+.raindrop:nth-child(6) { left: 60%; animation-duration: 1.2s; animation-delay: 0.1s; }
+.raindrop:nth-child(7) { left: 70%; animation-duration: 0.8s; animation-delay: 0.3s; }
+.raindrop:nth-child(8) { left: 80%; animation-duration: 1s; animation-delay: 0.2s; }
+.raindrop:nth-child(9) { left: 90%; animation-duration: 0.9s; animation-delay: 0.1s; }
+
+/* Position snowflakes */
+.snowflake:nth-child(1) { left: 10%; animation-duration: 5s; animation-delay: 0s; }
+.snowflake:nth-child(2) { left: 20%; animation-duration: 6s; animation-delay: 1s; }
+.snowflake:nth-child(3) { left: 30%; animation-duration: 5.5s; animation-delay: 0.5s; }
+.snowflake:nth-child(4) { left: 40%; animation-duration: 6.5s; animation-delay: 1.5s; }
+.snowflake:nth-child(5) { left: 50%; animation-duration: 5.2s; animation-delay: 0.2s; }
+.snowflake:nth-child(6) { left: 60%; animation-duration: 6.2s; animation-delay: 1.2s; }
+.snowflake:nth-child(7) { left: 70%; animation-duration: 5.8s; animation-delay: 0.8s; }
+.snowflake:nth-child(8) { left: 80%; animation-duration: 6.8s; animation-delay: 1.8s; }
+.snowflake:nth-child(9) { left: 90%; animation-duration: 5.5s; animation-delay: 0.5s; }
+
+/* Position wind lines */
+.windLine:nth-child(1) { top: 10%; animation-duration: 3s; animation-delay: 0s; }
+.windLine:nth-child(2) { top: 20%; animation-duration: 4s; animation-delay: 1s; }
+.windLine:nth-child(3) { top: 30%; animation-duration: 3.5s; animation-delay: 0.5s; }
+.windLine:nth-child(4) { top: 40%; animation-duration: 4.5s; animation-delay: 1.5s; }
+.windLine:nth-child(5) { top: 50%; animation-duration: 3.2s; animation-delay: 0.2s; }
+.windLine:nth-child(6) { top: 60%; animation-duration: 4.2s; animation-delay: 1.2s; }
+.windLine:nth-child(7) { top: 70%; animation-duration: 3.8s; animation-delay: 0.8s; }
+.windLine:nth-child(8) { top: 80%; animation-duration: 4.8s; animation-delay: 1.8s; }
+.windLine:nth-child(9) { top: 90%; animation-duration: 3.5s; animation-delay: 0.5s; } 

@@ -1,0 +1,249 @@
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  display: flex;
+  opacity: .5;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchContainer {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(168, 192, 255, 0.2);
+}
+
+.button {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.weatherInfo {
+  width: 100%;
+  text-align: center;
+}
+
+.cityName {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.temperature {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin: 0.5rem 0;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.details {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: 15px;
+}
+
+.detailItem {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.detailLabel {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.detailValue {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.recommendation {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.recommendation h3 {
+  color: var(--accent-primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.recommendation p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.error {
+  width: 100%;
+  max-width: 600px;
+  color: #e53e3e;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: rgba(229, 62, 62, 0.1);
+  border-radius: 12px;
+}
+
+.loading {
+  width: 100%;
+  text-align: center;
+  color: var(--text-secondary);
+  margin: 1.5rem 0;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .searchContainer {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .input {
+    width: auto;
+    flex: 1;
+  }
+
+  .button {
+    width: auto;
+  }
+
+  .cityName {
+    font-size: 2rem;
+  }
+
+  .temperature {
+    font-size: 3.5rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .details {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .detailItem {
+    padding: 1rem;
+  }
+
+  .detailLabel {
+    font-size: 1rem;
+  }
+
+  .detailValue {
+    font-size: 1.2rem;
+  }
+
+  .recommendation {
+    margin-top: 2rem;
+    padding: 1.5rem;
+  }
+
+  .recommendation h3 {
+    font-size: 1.3rem;
+  }
+
+  .recommendation p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .details {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .cityName {
+    font-size: 2.5rem;
+  }
+
+  .temperature {
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
+  }
+} 
